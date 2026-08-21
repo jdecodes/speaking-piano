@@ -1,0 +1,18 @@
+{
+    "sample_rate": 16000,
+    "target_duration": 1.0,
+    "target_samples": 16000,
+    "n_mels": 64,
+    "n_fft": 512,
+    "hop_length": 160,
+    "classes": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+    ]
+}
