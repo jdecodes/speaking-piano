@@ -1005,6 +1005,28 @@ Speak the octave: 0 to 8
 FINAL NOTE: G5
 ```
 
+# Multiple Classifiers and the Current Interaction
+
+The project uses separate classifiers for letters, digits, and accidentals. This creates a routing problem: once an audio segment is captured, the system needs to know which classifier should process it.
+
+For example, if the digit classifier receives someone saying C, it will still try to return one of 0-8, even though the input is not a digit.
+
+For now, this is handled using a guided interaction:
+```text
+Speak a letter (A-G)
+        ↓
+Run letter classifier
+        ↓
+Speak an octave (0-8)
+        ↓
+Run digit classifier
+        ↓
+Combine results
+        ↓
+C + 4 = C4
+        ↓
+Send to piano player
+```
 ---
 
 # Current result
